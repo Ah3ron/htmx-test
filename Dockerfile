@@ -7,7 +7,7 @@ RUN go mod download
 
 COPY . .
 
-RUN go build -o myapp .
+RUN CGO_ENABLED=0 GOOS=linux go build -o myapp .
 
 FROM alpine:latest
 
